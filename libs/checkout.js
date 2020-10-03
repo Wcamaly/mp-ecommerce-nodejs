@@ -1,5 +1,6 @@
 const mp = require("mercadopago")
-const moment = require("moment")
+const moment = require('moment-timezone')
+
 
 class Checkout {
     constructor(config){
@@ -30,8 +31,8 @@ class Checkout {
             external_reference : JSON.stringify(externalReference)
         }
         if (this.preference.expires){
-            newp.expiration_date_from = moment().format("yyyy-MM-DDTHH:mm:ss.SSSZ")
-            newp.expiration_date_to = moment().add(this.timeExpires, 'second').format("yyyy-MM-DDTHH:mm:ss.SSSZ")
+            newp.expiration_date_from = moment().tz('America/Argentina/Buenos_Aires').format("yyyy-MM-DDTHH:mm:ss.SSSZ")
+            newp.expiration_date_to = moment().tz('America/Argentina/Buenos_Aires').add(this.timeExpires, 'second').format("yyyy-MM-DDTHH:mm:ss.SSSZ")
         }
 
         console.log("MP: ", newp)
