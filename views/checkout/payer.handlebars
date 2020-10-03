@@ -26,61 +26,123 @@
                     </div>
                 </div>
                 <div class="as-accessories-results  as-search-desktop">
-                       <div class="as-accessories-results  as-search-desktop">
-                    <div class="width:60%">
-                        <div class="as-producttile-tilehero with-paddlenav " style="float:left;">
-                            <div class="as-dummy-container as-dummy-img">
+                    <div class="as-accessories-results  as-search-desktop">
+                        <div class="width:60%">
+                            <div class=" with-paddlenav " style="float:left;">
+                                <div class="as-dummy-container as-dummy-img">
 
-                                <img src="/assets/wireless-headphones" class="ir ir item-image as-producttile-image  " style="max-width: 70%;max-height: 70%;"alt="" width="445" height="445">
-                            </div>
-                            <div class="images mini-gallery gal5 ">
-                            
+                                    <img src="/assets/wireless-headphones"
+                                        class="ir ir item-image as-producttile-image  "
+                                        style="max-width: 70%;max-height: 70%;" alt="" width="445" height="445">
+                                </div>
+                                <div class="images mini-gallery gal5 ">
 
-                                <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
-                                    <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
-                                        <div class="as-tilegallery-element as-image-selected">
-                                            <div class=""></div>
-                                            <img src="/assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="200" height="200" style="content:-webkit-image-set(url({{ img }}) 2x);">
+
+                                    <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
+                                        <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink"
+                                            data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
+                                            <div class="as-tilegallery-element as-image-selected">
+                                                <div class=""></div>
+                                                <img src="/assets/003.jpg" class="ir ir item-image as-producttile-image"
+                                                    alt="" width="200" height="200"
+                                                    style="content:-webkit-image-set(url({{ img }}) 2x);">
+                                            </div>
+
                                         </div>
-                                        
+
+
                                     </div>
-                                    
-                                    
+
+                                    <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
+                                        <div class="as-producttile-title">
+                                            <h3 class="as-producttile-name">
+                                                <p class="as-producttile-tilelink">
+                                                    <span data-ase-truncate="2"> {{ title }} </span>
+                                                </p>
+
+                                            </h3>
+                                        </div>
+                                        <h3>
+                                            {{ price }}
+                                        </h3>
+                                        <h3>
+                                            {{ unit }}
+                                        </h3>
+                                    </div>
+
                                 </div>
 
-                                <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
-                                <div class="as-producttile-title">
-                                    <h3 class="as-producttile-name">
-                                        <p class="as-producttile-tilelink">
-                                            <span data-ase-truncate="2"> {{ title }} </span>
-                                        </p>
-
-                                    </h3>
-                                </div>
-                                <h3 >
-                                    {{ price }}
-                                </h3>
-                                <h3 >
-                                    {{ unit }}
-                                </h3>
                             </div>
+                            <div class="as-producttile-info" style="float:left;min-height: 168px;">
 
-                            </div>
+                                <form method="post" action="/api/checkout">
+                                    <div class="form-group">
+                                        <label>Nombre completo</label>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <input class="form-control" type="text" name="name"
+                                                    placeholder="Ingrese su nombre" />
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <input class="form-control" type="text" name="surname"
+                                                    placeholder="Ingrese su apellido" />
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        </div>
-                        <div class="as-producttile-info" style="float:left;min-height: 168px;">
-                            
-                            <form method="get" action="/checkout/payer" >
-                                <input type="hidden" name="title" value="{{ title }}"/>
-                                <input type="hidden" name="img" value="{{ img }}"/>
-                                <input type="hidden" name="price" value="{{ price }}"/>
-                                <input type="hidden" name="unit" value="{{ unit }}"/>
-                                <button type="submit" class="mercadopago-button" formmethod="get">Pagar</button>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input class="form-control" type="email" name="email"
+                                            placeholder="Ingrese su email" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Telefono</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input class="form-control" type="number" name="cod"
+                                                    placeholder="Cod. area" />
+                                            </div>
+
+                                            <div class="col-xs-8">
+                                                <input class="form-control" type="number" name="phone"
+                                                    placeholder="Cod. area" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr />
+
+                                    <h2>Datos de envio</h2>
+                                    <div class="form-group">
+                                        <label>Ingrese Dirección</label>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <input class="form-control" type="text" name="address"
+                                                    placeholder="Ingrese su dirección" />
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <input class="form-control" type="number" name="num"
+                                                    placeholder="Número" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input class="form-control" type="number" name="zipcode"
+                                                    placeholder="Código postal" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <input type="hidden" name="title" value="{{ title }}" />
+                                    <input type="hidden" name="img" value="{{ img }}" />
+                                    <input type="hidden" name="price" value="{{ price }}" />
+                                    <input type="hidden" name="unit" value="{{ unit }}" />
+                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar la compra</button>
                                 </form>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>

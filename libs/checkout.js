@@ -10,12 +10,10 @@ class Checkout {
             }
         )
         this.preference = {
-            backUrls : config.backUrls || {},
-            paymentMethods : config.paymentMethods || {},
+            back_urls : config.backUrls || {},
+            payment_methods : config.paymentMethods || {},
             auto_return : config.autoReturn || 'all',
-            purpose : config.purpose || null,
             notification_url : config.notificationUrl || '',
-            statement_descriptor : config.statementDescriptor || '',
             expires : config.expires || false
         }
 
@@ -32,10 +30,11 @@ class Checkout {
             external_reference : JSON.stringify(externalReference)
         }
         if (this.preference.expires){
-            newp.expiration_date_from = moment().format()
-            newp.expiration_date_to = moment().add(this.timeExpires, 'second').format()
+            newp.expiration_date_from = moment().format("yyyy-MM-DDTHH:mm:ss.SSSZ")
+            newp.expiration_date_to = moment().add(this.timeExpires, 'second').format("yyyy-MM-DDTHH:mm:ss.SSSZ")
         }
-        return mp.preference.create(newp)
+
+        return mp.preferences.create(newp)
     }
 
 

@@ -2,11 +2,19 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-    res.render('home');
+    res.render('home', {
+        helpers: {
+            view: function () { return 'home' }
+        }
+    });
 });
 
 router.get('/detail', function (req, res) {
-    res.render('detail', req.query);
+    res.render('detail', {...req.query,
+        helpers: {
+            view: function () { return 'item' }
+        }
+    });
 });
 
 router.get('/checkout', function (req, res) {
@@ -26,7 +34,11 @@ router.get('/checkout/pendings', function (req, res) {
 });
 
 router.get('/checkout/payer', function (req, res) {
-    res.render(`checkout/payer`, req.query);
+    res.render(`checkout/payer`, {...req.query,
+        helpers: {
+            view: function () { return 'item' }
+        }
+    });
 });
 
 module.exports = router;

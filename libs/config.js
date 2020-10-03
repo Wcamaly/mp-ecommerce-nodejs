@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const host = process.env.HOST || `http://localhost:${process.env.PORT || 3000}`
 module.exports = {
     MP_ACCESS_TOKEN: process.env.MP_ACCESS_TOKEN || "",
@@ -26,7 +28,7 @@ module.exports = {
         },
         TIME_EXPIRES: 3600*2,
         STATEMENT_DESCRIPTOR: "Tienda en linea celulares | Certificación de CheckOut Mercado Pago",
-        NOTIFICATION_URL: `${host}/checkout/notify`
+        NOTIFICATION_URL: `${host}/api/checkout/notify`
     }
 
 
