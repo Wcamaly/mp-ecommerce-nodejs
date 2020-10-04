@@ -41,7 +41,7 @@ router.post('/checkout/notify', async (req, res) => {
 
     fs.appendFile(
         path.join(__dirname,'../assets/notify.json'),
-        JSON.stringify(req.body), () => {
+        JSON.stringify(req.body,undefined, 2), () => {
             console.log("Se a agregado contenido")
         }
     );
