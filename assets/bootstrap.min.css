@@ -811,6 +811,42 @@ hr {
 .col-xs-offset-0 {
   margin-left: 0;
 }
+
+
+.btn {}
+.btn-circule{
+  border-radius: 50%;
+  width: 40px;
+  padding: 0.5em;
+}
+.bt-primary{
+  background-color: #23527c;
+}
+
+.btn-float {
+  position: fixed;
+  right: 5%;
+  bottom: 20%;
+  z-index: 1000;
+
+}
+
+.btn-float img{
+  width: 100%;
+}
+
+pre#json {
+  background: #8c8c89;
+  border: 3px solid #000;
+  width: 80%;
+  align-items: center;
+  margin: auto;
+  padding: 1em;
+  color: #fff;
+}
+
+
+
 @media (min-width: 768px) {
   .col-sm-1,
   .col-sm-2,

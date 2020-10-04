@@ -1,9 +1,12 @@
 var express = require('express');
 const config = require('../libs/config');
 var router = express.Router();
+const fs = require('fs')
 
-router.post('/checkout',async (req,res)=>{  
-    let {body}= req
+
+
+router.post('/checkout', async (req, res) => {
+    let { body } = req
     let checkout = req.app.get("checkout")
 
     let result = await checkout.createPreference([{
@@ -12,7 +15,7 @@ router.post('/checkout',async (req,res)=>{
         picture_url: `${config.HOST}${body.img}`,
         description: "Dispositivo móvil de Tienda e-commerce​ ", // hardcode for task
         quantity: Number(body.unit),
-        unit_price : Number(body.price)
+        unit_price: Number(body.price)
     }], {
         name: body.name,
         surname: body.surname,
@@ -26,18 +29,22 @@ router.post('/checkout',async (req,res)=>{
             "street_number": Number(body.num),
             "zip_code": body.zipcode
         },
-    }, {numOrder: 10001})
+    }, { numOrder: 10001 })
 
-    res.redirect(result.body.init_point) 
+    res.redirect(result.body.init_point)
 
 })
 
 
-router.post('/checkout/notify',async (req,res)=>{  
-   console.log("REQ", req.body)
+router.post('/checkout/notify', async (req, res) => {
+
+    fs.appendFile(
+        `/assets/notify.json`,
+        JSON.stringify(req.body)
+    );
 
     res.status(201).send()
 
 })
 
-module.exports=router
+module.exports = router
