@@ -36,7 +36,7 @@ router.post('/checkout',async (req,res)=>{
 router.post('/checkout/notify',async (req,res)=>{  
    console.log("REQ", req.body)
 
-    res.status(201)
+    res.status(201).send()
 
 })
 

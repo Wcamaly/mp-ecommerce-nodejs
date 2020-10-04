@@ -33,10 +33,10 @@ router.get('/checkout/failure', function (req, res) {
     res.render(`checkout/failure`, req.query);
 });
 
-router.get('/checkout/pendings', function (req, res) {
+router.get('/checkout/pending', function (req, res) {
     req.query.external_reference = JSON.parse(req.query.external_reference) // parseo to JSON
     console.log("QUEPendings: ", req.query)
-    res.render(`checkout/pendigs`, req.query);
+    res.render(`checkout/pending`, req.query);
 });
 
 router.get('/checkout/payer', function (req, res) {
