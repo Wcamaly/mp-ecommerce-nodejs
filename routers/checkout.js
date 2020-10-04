@@ -2,6 +2,7 @@ var express = require('express');
 const config = require('../libs/config');
 var router = express.Router();
 const fs = require('fs')
+const path = require('path')
 
 
 
@@ -39,7 +40,7 @@ router.post('/checkout', async (req, res) => {
 router.post('/checkout/notify', async (req, res) => {
 
     fs.appendFile(
-        `/assets/notify.json`,
+        path.join(__dirname,'../assets/notify.json'),
         JSON.stringify(req.body)
     );
 
