@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
             paymentMethods: Config.MP.PAYMENT_METHODS,
             notificationUrl:Config.MP.NOTIFICATION_URL,
             statementDescriptor: Config.MP.STATEMENT_DESCRIPTOR,
-            expires:true,
+            expires:false,
             timeExpires: Config.MP.TIME_EXPIRES
         })
         req.app.set("checkout", mp)
