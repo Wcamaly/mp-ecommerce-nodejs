@@ -10,7 +10,8 @@ module.exports = (req, res, next) => {
             notificationUrl:Config.MP.NOTIFICATION_URL,
             statementDescriptor: Config.MP.STATEMENT_DESCRIPTOR,
             expires:false,
-            timeExpires: Config.MP.TIME_EXPIRES
+            timeExpires: Config.MP.TIME_EXPIRES,
+            autoReturn:'approved'
         })
         req.app.set("checkout", mp)
     }

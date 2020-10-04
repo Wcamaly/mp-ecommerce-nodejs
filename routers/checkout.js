@@ -14,7 +14,7 @@ router.post('/checkout', async (req, res) => {
         id: 1234,
         title: body.title,
         picture_url: `${config.HOST}${body.img}`,
-        description: "Dispositivo móvil de Tienda e-commerce​ ", // hardcode for task
+        description: "“​ Dispositivo móvil de Tienda e-commerce​ ”", // hardcode for task
         quantity: Number(body.unit),
         unit_price: Number(body.price)
     }], {
@@ -30,7 +30,7 @@ router.post('/checkout', async (req, res) => {
             "street_number": Number(body.num),
             "zip_code": body.zipcode
         },
-    }, { numOrder: 10001 })
+    },'walter.camaly@vr4it.com')
 
     res.redirect(result.body.init_point)
 

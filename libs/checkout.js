@@ -28,7 +28,7 @@ class Checkout {
             ...this.preference,
             items,
             payer,
-            external_reference : JSON.stringify(externalReference)
+            external_reference : externalReference
         }
         if (this.preference.expires){
             newp.expiration_date_from = moment().tz('America/Argentina/Buenos_Aires').format("yyyy-MM-DDTHH:mm:ss.SSSZ")
