@@ -31,17 +31,17 @@ router.get('/checkout/notify', function (req, res) {
 });
 
 router.get('/checkout/success', function (req, res) {
-    req.query.external_reference = JSON.parse(req.query.external_reference) // parseo to JSON
+
     res.render(`checkout/success`, req.query);
 });
 
 router.get('/checkout/failure', function (req, res) {
-    req.query.external_reference = JSON.parse(req.query.external_reference) // parseo to JSON
+
     res.render(`checkout/failure`, req.query);
 });
 
 router.get('/checkout/pending', function (req, res) {
-    req.query.external_reference = JSON.parse(req.query.external_reference) // parseo to JSON
+
     res.render(`checkout/pending`, req.query);
 });
 
