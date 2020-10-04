@@ -22,14 +22,20 @@ router.get('/checkout', function (req, res) {
 });
 
 router.get('/checkout/success', function (req, res) {
+    req.query.external_reference = JSON.parse(req.query.external_reference) // parseo to JSON
+    console.log("QUESuccess : ", req.query)
     res.render(`checkout/success`, req.query);
 });
 
 router.get('/checkout/failure', function (req, res) {
+    req.query.external_reference = JSON.parse(req.query.external_reference) // parseo to JSON
+    console.log("QUEFailure: ", req.query)
     res.render(`checkout/failure`, req.query);
 });
 
 router.get('/checkout/pendings', function (req, res) {
+    req.query.external_reference = JSON.parse(req.query.external_reference) // parseo to JSON
+    console.log("QUEPendings: ", req.query)
     res.render(`checkout/pendigs`, req.query);
 });
 

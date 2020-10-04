@@ -35,7 +35,6 @@ class Checkout {
             newp.expiration_date_to = moment().tz('America/Argentina/Buenos_Aires').add(this.timeExpires, 'second').format("yyyy-MM-DDTHH:mm:ss.SSSZ")
         }
 
-        console.log("MP: ", newp)
         return mp.preferences.create(newp)
     }
 

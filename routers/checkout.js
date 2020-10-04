@@ -1,4 +1,5 @@
 var express = require('express');
+const config = require('../libs/config');
 var router = express.Router();
 
 router.post('/checkout',async (req,res)=>{  
@@ -8,7 +9,7 @@ router.post('/checkout',async (req,res)=>{
     let result = await checkout.createPreference([{
         id: 1234,
         title: body.title,
-        picture_url: body.img,
+        picture_url: `${config.HOST}${body.img}`,
         description: "Dispositivo móvil de Tienda e-commerce​ ", // hardcode for task
         quantity: Number(body.unit),
         unit_price : Number(body.price)
@@ -23,19 +24,19 @@ router.post('/checkout',async (req,res)=>{
         address: {
             "street_name": body.address,
             "street_number": Number(body.num),
-            "zip_code": body.zipCode
+            "zip_code": body.zipcode
         },
     }, {numOrder: 10001})
 
     res.redirect(result.body.init_point) 
 
-
 })
 
 
 router.post('/checkout/notify',async (req,res)=>{  
-   
+   console.log("REQ", req.body)
 
+    res.status(201)
 
 })
 

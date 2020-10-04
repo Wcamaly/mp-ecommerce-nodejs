@@ -1,0 +1,58 @@
+<div class="as-search-wrapper" role="main">
+    {{> header}}
+    <div class="as-search-results as-filter-open as-category-landing as-desktop " id="as-search-results">
+
+        <div id="accessories-tab" class="as-accessories-details">
+            <div class="as-accessories" id="as-accessories">
+                <div class="as-accessories-header">
+                    <div class="as-search-results-count">
+                        <span class="as-search-results-value"></span>
+                    </div>
+                </div>
+                <div class="as-searchnav-placeholder" style="height: 77px;">
+                    <div class="as-search-navbar" id="as-search-navbar" style="width: auto;">
+                        <div class="as-accessories-filter-tile column large-6 small-3">
+
+                            <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters"
+                                type="button">
+                                <h2 class=" as-filter-button-text">
+                                    Smartphones
+                                </h2>
+                            </button>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="as-accessories-results  as-search-desktop py-4">
+                    
+                    
+                    
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col align-self-center text-center">
+                                <img src="/assets/failure.gif" width="100" height="100" /  >
+                                <h2> Su pago fue rechazado.<br /></h2>
+                            </div>
+
+                        </div>
+                        <hr />
+                        {{!-- <div class="row justify-content-center">
+                            <div class="col align-self-center text-center">
+                                <h3>Detalle de la compra</h3>
+                                <p ><label class="label">Metodo de pago:</label> <span>{{payment_type}}</span></p>
+                                <p ><label class="label">Id de pago:</label> <span>{{collection_id}} </span>  </p>
+                                <p ><label class="label">Estado del pagp:</label> <span>{{collection_status}} </span>  </p>
+                                
+                            </div>
+
+                        </div> --}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{> footer}}

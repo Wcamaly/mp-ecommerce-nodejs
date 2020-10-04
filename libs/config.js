@@ -7,6 +7,7 @@ module.exports = {
     MP_PUBLIC_KEY: process.env.MP_PUBLIC_KEY || "",
     MP_INTEGRATOR_ID: process.env.MP_INTEGRATOR_ID || "",
     PORT: process.env.PORT || 3000,
+    HOST: process.env.HOST || 'http://localhost:3000',
     MP: {
         BACK_URLS: {
             success: `${host}/checkout/success`,
