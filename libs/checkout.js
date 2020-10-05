@@ -13,7 +13,7 @@ class Checkout {
         this.preference = {
             back_urls : config.backUrls || {},
             payment_methods : config.paymentMethods || {},
-            auto_return : config.autoReturn || 'all',
+            auto_return : config.autoReturn || 'approved',
             notification_url : config.notificationUrl || '',
             expires : config.expires || false
         }
@@ -34,7 +34,7 @@ class Checkout {
             newp.expiration_date_from = moment().tz('America/Argentina/Buenos_Aires').format("yyyy-MM-DDTHH:mm:ss.SSSZ")
             newp.expiration_date_to = moment().tz('America/Argentina/Buenos_Aires').add(this.timeExpires, 'second').format("yyyy-MM-DDTHH:mm:ss.SSSZ")
         }
-
+        console.log("PREF: ", newp)
         return mp.preferences.create(newp)
     }
 
